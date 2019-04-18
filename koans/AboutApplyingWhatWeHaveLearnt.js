@@ -79,33 +79,38 @@ describe("About Applying What We Have Learnt", function() {
     var ingredientCount = { "{ingredient name}": 0 };
 
     /* chain() together map(), flatten() and reduce() */
-    _.flatten(products.map(product => product.ingredients)).reduce((acc, ingredient) => acc[ingredient] === (acc[ingredient] || 0) + 1;
+    ingredientCount = _.flatten(products.map(product => product.ingredients)).reduce(function(acc, ingredient) {
+      acc[ingredient] = (acc[ingredient] || 0) + 1;
+      return acc;
+    }, {});
 
     expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   /*********************************************************************************/
   /* UNCOMMENT FOR EXTRA CREDIT */
-  /*
-  it("should find the largest prime factor of a composite number", function () {
   
-  });
+//   it("should find the largest prime factor of a composite number", function () {
+//     function findLargestPrimeFactor(compositeInt){
 
-  it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
+//     }
+//     expect(findLargestPrimeFactor(12535675)).toBe(501427);
+//   });
+
+//   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
     
-  });
+//   });
 
-  it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
+//   it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
       
+//   });
+
+//   it("should find the difference between the sum of the squares and the square of the sums", function () {
     
-  });
+//   });
 
-  it("should find the difference between the sum of the squares and the square of the sums", function () {
-    
-  });
+//   it("should find the 10001st prime", function () {
 
-  it("should find the 10001st prime", function () {
-
-  });
-  */
+//   });
+  
 });
